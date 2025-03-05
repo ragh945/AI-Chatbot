@@ -18,8 +18,8 @@ openai.api_key = st.secrets["api_key"]
 
 # Predefined PDFs for Python and Machine Learning
 pdf_files = {
-    "Python": r"C:/Users/RAGHAVENDRA KUMAR/OneDrive/Desktop/Python_Concepts.pdf",
-    "Machine Learning": r"C:/Users/RAGHAVENDRA KUMAR/OneDrive/Documents/Machine Learning Interview Questions with Answers.pdf"
+    "Python": "Python_Concepts.pdf",
+    "Machine Learning": "Machine Learning Interview Questions with Answers.pdf"
 }
 
 def extract_text_from_pdf(pdf_path, max_chars=5000):
