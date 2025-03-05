@@ -10,6 +10,7 @@ from sentence_transformers import SentenceTransformer, util
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from io import BytesIO
+import whisper
 
 # Load sentence transformer model
 model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -62,25 +63,13 @@ def evaluate_answer(user_answer, correct_answer):
     
     return score
 
-def transcribe_audio(audio_file="input.wav"):
-    client = speech.SpeechClient()
-    with io.open(audio_file, "rb") as audio_file:
-        content = audio_file.read()
 
-    audio = speech.RecognitionAudio(content=content)
-    config = speech.RecognitionConfig(
-        encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
-        sample_rate_hertz=16000,
-        language_code="en-US",
-    )
 
-    response = client.recognize(config=config, audio=audio)
+def transcribe_audio(audio_file):
+    model = whisper.load_model("base")
+    result = model.transcribe(audio_file)
+    return result["text"]
 
-    for result in response.results:
-        return result.alternatives[0].transcript
-    return "No speech detected"
-
-print(transcribe_audio("sample.wav"))
 
 def generate_report(responses, total_score, final_result, user_name):
     df = pd.DataFrame(responses)
