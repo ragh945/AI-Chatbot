@@ -1,17 +1,17 @@
 import streamlit as st
 import openai
 import PyPDF2
-import speech_recognition as sr
+#import speech_recognition as sr
 import random
 import pandas as pd
 from sentence_transformers import SentenceTransformer, util
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from io import BytesIO
-import whisper
-import sounddevice as sd
-import numpy as np
-import wave
+#import whisper
+#import sounddevice as sd
+#import numpy as np
+#import wave
 
 # Load sentence transformer model
 model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -64,27 +64,6 @@ def evaluate_answer(user_answer, correct_answer):
     
     return score
 
-
-def record_audio(filename="audio.wav", duration=5, samplerate=44100):
-    print("Recording...")
-    audio_data = sd.rec(int(duration * samplerate), samplerate=samplerate, channels=1, dtype=np.int16)
-    sd.wait()
-    print("Recording complete.")
-
-    with wave.open(filename, "wb") as wf:
-        wf.setnchannels(1)
-        wf.setsampwidth(2)
-        wf.setframerate(samplerate)
-        wf.writeframes(audio_data.tobytes())
-
-record_audio()
-
-
-
-def transcribe_audio(audio_file="audio.wav"):
-    model = whisper.load_model("base")
-    result = model.transcribe(audio_file)
-    return result["text"]
 
 
 def generate_report(responses, total_score, final_result, user_name):
