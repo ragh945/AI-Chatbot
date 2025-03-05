@@ -155,15 +155,7 @@ if st.session_state["current_question"] < 5 and st.session_state["incorrect_coun
     question = st.session_state["questions"][q_index]
     st.write(f"Q{q_index+1}: {question}")
 
-    input_method = st.radio("Answer Input Method", ("Text", "Voice"))
-    user_answer = ""
-
-    if input_method == "Text":
-        user_answer = st.text_area("Your Answer")
-    else:
-        if st.button("Record Answer"):
-            user_answer = transcribe_audio()
-            st.write(f"You said: {user_answer}")
+    user_answer = st.text_area("Your Answer")
 
     if st.button("Submit Answer") and user_answer:
         score = evaluate_answer(user_answer, question)
