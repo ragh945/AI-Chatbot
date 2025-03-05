@@ -10,4 +10,7 @@ groq
 speechrecognition
 openai-whisper
 torch  #
+sounddevice
+numpy
+wave
 
