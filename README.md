@@ -80,7 +80,7 @@ Here are some challenges and the solutions applied in the project:
  ## Screenshots:
  ![image](https://github.com/user-attachments/assets/fc02f057-1847-484f-b3ca-aa37bdaf05f2)
 
- ## Deployment Link : https://github.com/ragh945/AI-Chatbot/blob/main/requirements.txt
+ ## Deployment Link : https://ai-chatbot-w2if96jd6ca9bkpmxqkuh8.streamlit.app/
 
 
 ## Conclusion:
