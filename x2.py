@@ -3,6 +3,8 @@ import openai
 import PyPDF2
 import speech_recognition as sr
 import random
+from google.cloud import speech
+import io
 import pandas as pd
 from sentence_transformers import SentenceTransformer, util
 from reportlab.lib.pagesizes import letter
@@ -60,17 +62,25 @@ def evaluate_answer(user_answer, correct_answer):
     
     return score
 
-def transcribe_audio():
-    recognizer = sr.Recognizer()
-    with sr.Microphone() as source:
-        st.write("Listening...")
-        audio = recognizer.listen(source)
-    try:
-        return recognizer.recognize_google(audio)
-    except sr.UnknownValueError:
-        return "Could not understand audio."
-    except sr.RequestError:
-        return "Error connecting to the speech recognition service."
+def transcribe_audio(audio_file="input.wav"):
+    client = speech.SpeechClient()
+    with io.open(audio_file, "rb") as audio_file:
+        content = audio_file.read()
+
+    audio = speech.RecognitionAudio(content=content)
+    config = speech.RecognitionConfig(
+        encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
+        sample_rate_hertz=16000,
+        language_code="en-US",
+    )
+
+    response = client.recognize(config=config, audio=audio)
+
+    for result in response.results:
+        return result.alternatives[0].transcript
+    return "No speech detected"
+
+print(transcribe_audio("sample.wav"))
 
 def generate_report(responses, total_score, final_result, user_name):
     df = pd.DataFrame(responses)
