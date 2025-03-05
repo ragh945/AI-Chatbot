@@ -62,6 +62,21 @@ def evaluate_answer(user_answer, correct_answer):
     return score
 
 
+def record_audio(filename="audio.wav", duration=5, samplerate=44100):
+    print("Recording...")
+    audio_data = sd.rec(int(duration * samplerate), samplerate=samplerate, channels=1, dtype=np.int16)
+    sd.wait()
+    print("Recording complete.")
+
+    with wave.open(filename, "wb") as wf:
+        wf.setnchannels(1)
+        wf.setsampwidth(2)
+        wf.setframerate(samplerate)
+        wf.writeframes(audio_data.tobytes())
+
+record_audio()
+
+
 
 def transcribe_audio(audio_file="audio.wav"):
     model = whisper.load_model("base")
