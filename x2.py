@@ -63,7 +63,7 @@ def evaluate_answer(user_answer, correct_answer):
 
 
 
-def transcribe_audio(audio_file):
+def transcribe_audio(audio_file="audio.wav"):
     model = whisper.load_model("base")
     result = model.transcribe(audio_file)
     return result["text"]
