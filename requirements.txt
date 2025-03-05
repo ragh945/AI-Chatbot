@@ -47,3 +47,4 @@ sentence-transformers
 torch
 pyaudio
 openai
+groq
