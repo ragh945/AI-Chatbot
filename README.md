@@ -81,7 +81,7 @@ Here are some challenges and the solutions applied in the project:
  ![image](https://github.com/user-attachments/assets/fc02f057-1847-484f-b3ca-aa37bdaf05f2)
 
  ## Deployment Link : https://ai-chatbot-w2if96jd6ca9bkpmxqkuh8.streamlit.app/Like
- ## Link2(Using Openai) : https://ai-chatbot-qbmqgzc9mtxk5z4z8ojxmk.streamlit.app/
+ ## Link2(Using Openai) : https://ai-chatbot-jbwufxzzrjx7q62sou5qdn.streamlit.app/
 
 
 ## Conclusion:
