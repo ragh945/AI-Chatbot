@@ -3,8 +3,6 @@ import openai
 import PyPDF2
 import speech_recognition as sr
 import random
-from google.cloud import speech
-import io
 import pandas as pd
 from sentence_transformers import SentenceTransformer, util
 from reportlab.lib.pagesizes import letter
