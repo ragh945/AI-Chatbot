@@ -19,8 +19,8 @@ groq_api_key = "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"
 
 # Predefined PDFs for Python and Machine Learning
 pdf_files = {
-    "Python": r"C:/Users/RAGHAVENDRA KUMAR/OneDrive/Desktop/Python_Concepts.pdf",
-    "Machine Learning": r"C:/Users/RAGHAVENDRA KUMAR/OneDrive/Documents/Machine Learning Interview Questions with Answers.pdf"
+    "Python": "Python_Concepts.pdf",
+    "Machine Learning": "Machine Learning Interview Questions with Answers.pdf"
 }
 
 def extract_text_from_pdf(pdf_path, max_chars=5000):
