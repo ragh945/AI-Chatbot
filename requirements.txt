@@ -2,11 +2,9 @@ streamlit
 openai
 PyPDF2
 speechrecognition
-pyaudio
 pandas
 sentence-transformers
 reportlab
 torch
 random
 groq
-openai
