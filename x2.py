@@ -14,7 +14,7 @@ model = SentenceTransformer("all-MiniLM-L6-v2")
 
 # OpenAI API Key (Use Streamlit secrets for security)
 openai.api_key = st.secrets["api_key"]
-#openai.api_key = "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"
+
 
 # Predefined PDFs for Python and Machine Learning
 pdf_files = {
