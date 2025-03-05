@@ -9,6 +9,9 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from io import BytesIO
 import whisper
+import sounddevice as sd
+import numpy as np
+import wave
 
 # Load sentence transformer model
 model = SentenceTransformer("all-MiniLM-L6-v2")
