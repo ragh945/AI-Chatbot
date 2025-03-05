@@ -13,8 +13,10 @@ from io import BytesIO
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 # OpenAI API Key (Use Streamlit secrets for security)
-openai.api_key = st.secrets["api_key"]
+openai_api_key = st.secrets["openai"]["api_key"]
 
+# Use the API key
+openai.api_key = openai_api_key
 
 # Predefined PDFs for Python and Machine Learning
 pdf_files = {
