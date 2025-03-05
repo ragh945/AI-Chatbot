@@ -8,3 +8,7 @@ reportlab
 torch --index-url https://download.pytorch.org/whl/cpu
 groq
 pyaudio
+google-cloud-speech
+speechrecognition
+ffmpeg
+ffmpeg-python
