@@ -77,6 +77,9 @@ Here are some challenges and the solutions applied in the project:
 - 🔹 Early termination logic (3 incorrect answers) ensures efficient interview flow.
 - 🔹 Automated report generation adds value for users to track progress.
 
+  ![image](https://github.com/user-attachments/assets/6ec7b0b3-34d4-467a-b869-68e4afe41e47)
+
+
  ## Screenshots:
  ![image](https://github.com/user-attachments/assets/fc02f057-1847-484f-b3ca-aa37bdaf05f2)
 
